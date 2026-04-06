@@ -1,6 +1,6 @@
 package com.juaracoding;
 
-// import org.testng.Assert;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -45,13 +45,13 @@ public class LoginTest {
         loginPage.login(username, password);
     }
 
-    // @Test(description = "Test Case: Invalid Login")
-    // public void testInvalidLogin() {
-    //     // Go to login page
-    //     loginPage.goToLoginPage();
-    //     // Perform invalid login and verify error
-    //     loginPage.login("invalid", "invalid");
-    //     String error = loginPage.getErrorMessage();
-    //     Assert.assertEquals(error, "Username and password do not match any user in this service.", "Expected error message for invalid login");
-    // }
+    @Test(description = "Test Case: Invalid Login")
+    public void testInvalidLogin() {
+        // Go to login page
+        loginPage.goToLoginPage();
+        // Perform invalid login and verify error
+        loginPage.login("invalid", "invalid");
+        String error = loginPage.getErrorMessage();
+        Assert.assertEquals(error, "Username and password do not match any user in this service.", "Expected error message for invalid login");
+    }
 }

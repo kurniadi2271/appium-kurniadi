@@ -59,9 +59,8 @@ public class CartTest {
         // Go to cart
         productPage.goToCart();
         // Perform checkout
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement cartButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("com.saucelabs.mydemoapp.android:id/cartBt")));
-        cartButton.click();
+        productPage.addProductToCart();
+
         // cartPage.clickCheckout();
         cartPage.enterShippingInfo(name, address, address2, city, state, zip, country);
         cartPage.enterPaymentInfo(name, cardNumber, expiration, securityCode);

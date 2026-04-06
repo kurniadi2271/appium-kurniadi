@@ -85,7 +85,7 @@ public class CartPage extends BasePage {
         countryField.clear();
         countryField.sendKeys(country);
         scrollToElementById("com.saucelabs.mydemoapp.android:id/paymentBtn");
-        toPaymentButton.click();
+        click(toPaymentButton);
     }
 
     public void enterPaymentInfo(String paymentName, String cardNumber, String expiration, String securityCode) {
@@ -97,15 +97,15 @@ public class CartPage extends BasePage {
         expirationDateField.sendKeys(expiration);
         securityCodeField.clear();
         securityCodeField.sendKeys(securityCode);
-        toPaymentButton.click();
+        click(toPaymentButton);
     }
 
     public void placeOrder() {
-        toPaymentButton.click();
+        click(toPaymentButton); // Pastikan ID ini benar untuk Place Order
     }
 
     public void completeCheckout() {
-        completeButton.click();
+        click(completeButton);
     }
 
 }
